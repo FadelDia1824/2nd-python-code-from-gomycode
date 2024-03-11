@@ -1,0 +1,28 @@
+# Création de la liste de courses
+liste_de_courses = []
+
+while True:
+    print("\nMenu:")
+    print("1. Ajouter un article à la liste")
+    print("2. Supprimer un article de la liste")
+    print("3. Afficher la liste")
+    print("4. Quitter")
+    choix = input("Veuillez choisir une option (1, 2, 3, ou 4): ")
+
+    if choix == "1":
+        article = input("Veuillez entrer l'article à ajouter à la liste: ")
+        liste_de_courses.append(article)
+    elif choix == "2":
+        article = input("Veuillez entrer l'article à supprimer de la liste: ")
+        if article in liste_de_courses:
+            liste_de_courses.remove(article)
+        else:
+            print("Cet article n'est pas dans la liste.")
+    elif choix == "3":
+        print("\nVoici votre liste de courses :")
+        for i, article in enumerate(liste_de_courses, start=1):
+            print(f"{i}. {article}")
+    elif choix == "4":
+        break
+    else:
+        print("Choix non valide. Veuillez choisir une option entre 1 et 4.")
